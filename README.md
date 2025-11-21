@@ -28,6 +28,18 @@ And also a shoutout to [Chu-Tak Li](https://chutakcode.wixsite.com/website) for 
 
 ## Run
 
+### Docker
+
+1. Clone this repository to your computer.
+2. From the repository root, build a Docker image with the command `docker build -t watermark-removal .`
+3. Download the model dir using this [link](https://drive.google.com/drive/folders/1xRV4EdjJuAfsX9pQme6XeoFznKXG0ptJ?usp=sharing).
+4. Create and run a docker container with the image you built using the command:
+```bash
+docker run --rm -v '<path_to_model_dir>:/repo/model' -v '<path_to_input_dir>:/input' -v '<path_to_output_dir>:/output' watermark-removal --checkpoint_dir /repo/model --image '/input/<input_image_file>' --output '/output/<output_image_file>' --watermark_type istock
+```
+
+### Google colab (broken)
+
 - use [Google colab](https://research.google.com/colaboratory/)
 
 - First of all, clone this repo
